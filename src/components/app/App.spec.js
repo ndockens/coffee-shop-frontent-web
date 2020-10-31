@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import App from './App';
 import Home from '../../pages/home/Home';
+import Navigation from '../navigation/Navigation';
 
 describe('App', () => {
   let wrapper;
@@ -16,5 +17,9 @@ describe('App', () => {
 
   it('should render the Home page', () => {
     expect(wrapper.containsMatchingElement(<Home />)).toEqual(true);
+  });
+
+  it('should render the Navigation component', () => {
+    expect(wrapper.containsMatchingElement(<Navigation />)).toEqual(true);
   });
 });
