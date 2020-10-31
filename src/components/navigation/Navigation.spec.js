@@ -9,7 +9,11 @@ describe('Navigation', () => {
     wrapper = shallow(<Navigation />);
   });
 
-  it('should render a navbar element', () => {
+  it('should render a nav element', () => {
     expect(wrapper.find('nav').length).toEqual(1);
+  });
+
+  it(`should render a div element with the 'container' class inside the navbar`, () => {
+    expect(wrapper.find('nav div.container').length).toEqual(1);
   });
 });
