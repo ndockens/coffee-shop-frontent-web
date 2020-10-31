@@ -1,10 +1,20 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import App from './App';
+import Home from '../../pages/home/Home';
 
 describe('App', () => {
-  it('should render a div', () => {
-    const wrapper = shallow(<App />);
-    expect(wrapper.find('div').length).toEqual(1);
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = shallow(<App />);
+  });
+
+  it(`should render a div with the 'container' class`, () => {
+    expect(wrapper.find('div.container').length).toEqual(1);
+  });
+
+  it('should render the Home page', () => {
+    expect(wrapper.containsMatchingElement(<Home />)).toEqual(true);
   });
 });
